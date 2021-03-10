@@ -19,8 +19,11 @@ dependencies:
   outline_material_icons: ^0.1.1
   flutter_icons: any
   flutter_svg: any
-
-
+  flutter_spinkit: any
+  cached_network_image:
+  flutter_rating_bar: ^3.0.1+1
+  image_picker: ^0.7.2
+  intl:
 dev_dependencies:
   flutter_test:
     sdk: flutter

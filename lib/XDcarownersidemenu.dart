@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './XDprofile.dart';
+import 'pages/profile.dart';
 import 'package:adobe_xd/page_link.dart';
-import './XDmycars.dart';
-import './XDmycaraccedent.dart';
-import './XDtrips.dart';
-import './XDNewrequest.dart';
+import 'pages/myCars.dart';
+import 'pages/a_car_accident.dart';
+import 'pages/a_car_trips.dart';
+import 'pages/new_request.dart';
 
 class XDcarownersidemenu extends StatelessWidget {
   XDcarownersidemenu({
@@ -207,7 +207,7 @@ class XDcarownersidemenu extends StatelessWidget {
                           transition: LinkTransition.Fade,
                           ease: Curves.easeOut,
                           duration: 0.3,
-                          pageBuilder: () => XDprofile(),
+                          pageBuilder: () => Profile(),
                         ),
                       ],
                       child: Stack(
@@ -248,7 +248,7 @@ class XDcarownersidemenu extends StatelessWidget {
                           transition: LinkTransition.Fade,
                           ease: Curves.easeOut,
                           duration: 0.3,
-                          pageBuilder: () => XDmycars(),
+                          pageBuilder: () => MyCars(),
                         ),
                       ],
                       child: Stack(
@@ -320,7 +320,7 @@ class XDcarownersidemenu extends StatelessWidget {
                           transition: LinkTransition.Fade,
                           ease: Curves.easeOut,
                           duration: 0.3,
-                          pageBuilder: () => XDmycars(),
+                          pageBuilder: () => MyCars(),
                         ),
                       ],
                       child: Stack(
@@ -362,7 +362,7 @@ class XDcarownersidemenu extends StatelessWidget {
                           transition: LinkTransition.Fade,
                           ease: Curves.easeOut,
                           duration: 0.3,
-                          pageBuilder: () => XDmycaraccedent(),
+                          pageBuilder: () => ACarAccident(),
                         ),
                       ],
                       child: Stack(
@@ -403,7 +403,7 @@ class XDcarownersidemenu extends StatelessWidget {
                           transition: LinkTransition.Fade,
                           ease: Curves.easeOut,
                           duration: 0.3,
-                          pageBuilder: () => XDNewrequest(),
+                          pageBuilder: () => NewRequest(),
                         ),
                       ],
                       child: Stack(
@@ -420,7 +420,7 @@ class XDcarownersidemenu extends StatelessWidget {
                                   transition: LinkTransition.Fade,
                                   ease: Curves.easeOut,
                                   duration: 0.3,
-                                  pageBuilder: () => XDtrips(),
+                                  pageBuilder: () => ACarTrips(),
                                 ),
                               ],
                               child: Text(

@@ -4,7 +4,7 @@ import 'package:car_rent/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/get_utils/get_utils.dart';
 
-import '../XDoptions.dart';
+import 'home.dart';
 
 class Registration extends StatefulWidget {
   Registration({
@@ -144,7 +144,7 @@ class _RegistrationState extends State<Registration> {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => XDoptions(),
+                  pageBuilder: () => Home(),
                 ),
               ],
               child: SizedBox(

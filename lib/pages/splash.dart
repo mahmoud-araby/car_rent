@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'intro.dart';
 
 class Splash extends StatefulWidget {
+  static const String id = "/Splash";
   Splash({
     Key key,
   }) : super(key: key);

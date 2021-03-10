@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get_utils/src/get_utils/get_utils.dart';
 
-import '../XDoptions.dart';
+import 'home.dart';
 import 'registration.dart';
 
 class Login extends StatelessWidget {
@@ -184,7 +184,7 @@ class Login extends StatelessWidget {
                             transition: LinkTransition.Fade,
                             ease: Curves.easeOut,
                             duration: 0.3,
-                            pageBuilder: () => XDoptions(),
+                            pageBuilder: () => Home(),
                           ),
                         ],
                         child: Container(

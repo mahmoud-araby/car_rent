@@ -2,12 +2,9 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'pages/login.dart';
+import 'login.dart';
 
-class XDoptions extends StatelessWidget {
-  XDoptions({
-    Key key,
-  }) : super(key: key);
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

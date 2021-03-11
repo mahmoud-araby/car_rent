@@ -1,17 +1,19 @@
-import 'package:car_rent/test_data.dart';
+import 'package:car_rent/pages/owner/myCars.dart';
 import 'package:car_rent/widgets/button.dart';
-import 'package:car_rent/widgets/custom_image.dart';
+import 'package:car_rent/widgets/drawer/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:get/get.dart';
-import 'myCars.dart';
-import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Profile extends StatelessWidget {
+import 'package:car_rent/test_data.dart';
+import 'package:car_rent/widgets/custom_image.dart';
+import 'package:get/get.dart';
+
+class CarOwnerProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: Text("User Profile"),
         centerTitle: true,
@@ -24,18 +26,101 @@ class Profile extends StatelessWidget {
             child: cachedNetworkImage(TestData.user.pic),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: 30,
-                vertical: MediaQuery.of(context).size.width * 0.1),
-            child: RegisterButton("My Cars", () {
-              Get.toNamed(MyCars.id);
-            }),
-          ),
-          Padding(
             padding: const EdgeInsets.all(12.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+                Text(
+                  TestData.user.name,
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 25,
+                    color: const Color(0xffbdbdbd),
+                    height: 1.6153846153846154,
+                  ),
+                  textHeightBehavior:
+                      TextHeightBehavior(applyHeightToFirstAscent: false),
+                  textAlign: TextAlign.left,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Divider(
+                  thickness: 1,
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "4.7/5",
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 18,
+                            color: const Color(0xffbdbdbd),
+                            height: 1.6153846153846154,
+                          ),
+                          textHeightBehavior: TextHeightBehavior(
+                              applyHeightToFirstAscent: false),
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Ratings",
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 18,
+                            color: const Color(0xffbdbdbd),
+                            height: 1.6153846153846154,
+                          ),
+                          textHeightBehavior: TextHeightBehavior(
+                              applyHeightToFirstAscent: false),
+                          textAlign: TextAlign.left,
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          "45",
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 18,
+                            color: const Color(0xffbdbdbd),
+                            height: 1.6153846153846154,
+                          ),
+                          textHeightBehavior: TextHeightBehavior(
+                              applyHeightToFirstAscent: false),
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Cars on Rent",
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 18,
+                            color: const Color(0xffbdbdbd),
+                            height: 1.6153846153846154,
+                          ),
+                          textHeightBehavior: TextHeightBehavior(
+                              applyHeightToFirstAscent: false),
+                          textAlign: TextAlign.left,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Divider(
+                  thickness: 1,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
                 Text(
                   'About:',
                   style: TextStyle(
@@ -220,6 +305,12 @@ class Profile extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(Get.mediaQuery.size.width * 0.1),
+            child: RegisterButton("View All Cars", () {
+              Get.toNamed(MyCars.id);
+            }),
           ),
         ],
       ),

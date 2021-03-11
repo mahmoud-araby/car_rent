@@ -1,4 +1,6 @@
 import 'package:car_rent/model/car.dart';
+import 'package:car_rent/pages/owner/a_car_accident.dart';
+import 'package:car_rent/pages/owner/a_car_trips.dart';
 import 'package:car_rent/widgets/custom_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -57,7 +59,9 @@ class MyCarTripsWidget extends StatelessWidget {
                             flex: 4,
                             child: RegisterButton(
                               "Trips",
-                              () {},
+                              () {
+                                Get.toNamed(ACarTrips.id);
+                              },
                               radius: 20,
                               fontSize: 16,
                             ),
@@ -72,7 +76,9 @@ class MyCarTripsWidget extends StatelessWidget {
                             flex: 4,
                             child: RegisterButton(
                               "Accident",
-                              () {},
+                              () {
+                                Get.toNamed(MyCarAccident.id);
+                              },
                               radius: 20,
                               fontSize: 16,
                             ),

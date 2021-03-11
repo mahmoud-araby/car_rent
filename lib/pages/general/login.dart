@@ -1,17 +1,23 @@
 import 'package:adobe_xd/page_link.dart';
+import 'package:car_rent/pages/owner/myCars.dart';
+import 'package:car_rent/pages/user/Ads.dart';
 import 'package:car_rent/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:get/get_utils/src/get_utils/get_utils.dart';
 
-import 'home.dart';
+import '../../main.dart';
 import 'registration.dart';
 
-class Login extends StatelessWidget {
-  Login({
-    Key key,
-  }) : super(key: key);
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   String email;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,10 +82,11 @@ class Login extends StatelessWidget {
                               textAlign: TextAlign.left,
                             ),
                             Radio(
-                                value: false,
+                                value: isOwner == true ? 0 : 1,
                                 fillColor: MaterialStateProperty.all<Color>(
-                                    Colors.white),
-                                groupValue: 2,
+                                    Get.theme.primaryColor),
+                                toggleable: true,
+                                groupValue: 1,
                                 onChanged: (val) {}),
                           ],
                         ),
@@ -100,33 +107,12 @@ class Login extends StatelessWidget {
                               textAlign: TextAlign.left,
                             ),
                             Radio(
-                                value: false,
+                                value: isOwner == true ? 1 : 0,
                                 fillColor: MaterialStateProperty.all<Color>(
-                                    Colors.white),
-                                groupValue: 2,
-                                onChanged: (val) {}),
-                          ],
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Text(
-                              'السائق',
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontSize: 26,
-                                color: const Color(0xffbdbdbd),
-                                height: 1.6153846153846154,
-                              ),
-                              textHeightBehavior: TextHeightBehavior(
-                                  applyHeightToFirstAscent: false),
-                              textAlign: TextAlign.left,
-                            ),
-                            Radio(
-                                value: false,
-                                fillColor: MaterialStateProperty.all<Color>(
-                                    Colors.white),
+                                    Get.theme.primaryColor),
+                                activeColor: Get.theme.primaryColor,
+                                focusColor: Get.theme.primaryColor,
+                                toggleable: true,
                                 groupValue: 2,
                                 onChanged: (val) {}),
                           ],
@@ -184,7 +170,13 @@ class Login extends StatelessWidget {
                             transition: LinkTransition.Fade,
                             ease: Curves.easeOut,
                             duration: 0.3,
-                            pageBuilder: () => Home(),
+                            pageBuilder: () {
+                              if (isOwner) {
+                                return MyCars();
+                              } else {
+                                return Showroom();
+                              }
+                            },
                           ),
                         ],
                         child: Container(
@@ -200,19 +192,17 @@ class Login extends StatelessWidget {
                             ],
                           ),
                           child: Center(
-                            child: Center(
-                              child: Text(
-                                'Login',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 32,
-                                  color: const Color(0xffffffff),
-                                  height: 1,
-                                ),
-                                textHeightBehavior: TextHeightBehavior(
-                                    applyHeightToFirstAscent: false),
-                                textAlign: TextAlign.center,
+                            child: Text(
+                              'Login',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 32,
+                                color: const Color(0xffffffff),
+                                height: 1,
                               ),
+                              textHeightBehavior: TextHeightBehavior(
+                                  applyHeightToFirstAscent: false),
+                              textAlign: TextAlign.center,
                             ),
                           ),
                         ),

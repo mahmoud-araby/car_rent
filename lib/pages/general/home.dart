@@ -2,9 +2,12 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../main.dart';
 import 'login.dart';
 
 class Home extends StatelessWidget {
+  static const String id = "/Home";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +43,10 @@ class Home extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.easeOut,
                         duration: 0.3,
-                        pageBuilder: () => Login(),
+                        pageBuilder: () {
+                          isOwner = true;
+                          return Login();
+                        },
                       ),
                     ],
                     child: Container(
@@ -84,7 +90,10 @@ class Home extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.easeOut,
                         duration: 0.3,
-                        pageBuilder: () => Login(),
+                        pageBuilder: () {
+                          isOwner = false;
+                          return Login();
+                        },
                       ),
                     ],
                     child: Container(

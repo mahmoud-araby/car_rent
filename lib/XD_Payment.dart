@@ -1,13 +1,10 @@
+import 'package:car_rent/pages/user/checkout.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './XD_Checkout.dart';
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class XD_Payment extends StatelessWidget {
-  XD_Payment({
-    Key key,
-  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +21,7 @@ class XD_Payment extends StatelessWidget {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => XD_Checkout(),
+                  pageBuilder: () => Checkout(),
                 ),
               ],
               child: SizedBox(

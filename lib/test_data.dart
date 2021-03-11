@@ -1,15 +1,42 @@
 import 'package:car_rent/model/accidents.dart';
 import 'package:car_rent/model/car.dart';
+import 'package:car_rent/model/driver_accidents.dart';
 import 'package:car_rent/model/request.dart';
 import 'package:car_rent/model/trips.dart';
 import 'package:car_rent/model/user.dart';
 
+import 'model/dealer.dart';
+
 class TestData {
+  static List<Dealer> getDealerList() {
+    return <Dealer>[
+      Dealer(
+        "Hertz",
+        174,
+        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fGNhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      ),
+      Dealer(
+        "Avis",
+        126,
+        "https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fGNhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      ),
+      Dealer(
+        "Tesla",
+        89,
+        "https://images.unsplash.com/photo-1494905998402-395d579af36f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fGNhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      ),
+    ];
+  }
+
   static List<Car> myCars = [
     Car(
         title: "ferrari",
         rating: 4,
         price: 340,
+        seats: 4,
+        features: ["feature 1", "feature 2", "feature 3"],
+        petrolType: "gasoline",
+        transmissionType: "bus",
         pic:
             "https://images.unsplash.com/photo-1597404294360-feeeda04612e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
         brand: "dsf ",
@@ -21,6 +48,10 @@ class TestData {
         title: "ferrari",
         rating: 1,
         price: 340,
+        seats: 4,
+        features: ["feature 1", "feature 2", "feature 3"],
+        petrolType: "gasoline",
+        transmissionType: "bus",
         pic:
             "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
         brand: "ne s dfw",
@@ -32,6 +63,10 @@ class TestData {
         title: "ferrari",
         rating: 2,
         price: 340,
+        seats: 4,
+        features: ["feature 1", "feature 2", "feature 3"],
+        petrolType: "gasoline",
+        transmissionType: "bus",
         pic:
             "https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80",
         brand: "ne sfd w",
@@ -42,6 +77,10 @@ class TestData {
     Car(
         title: "ferrari",
         rating: 3.5,
+        seats: 4,
+        features: ["feature 1", "feature 2", "feature 3"],
+        petrolType: "gasoline",
+        transmissionType: "bus",
         price: 340,
         pic:
             "https://images.unsplash.com/photo-1550355291-bbee04a92027?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=376&q=80",
@@ -53,6 +92,10 @@ class TestData {
     Car(
         title: "ferrari",
         rating: 3,
+        seats: 4,
+        features: ["feature 1", "feature 2", "feature 3"],
+        petrolType: "gasoline",
+        transmissionType: "bus",
         price: 340,
         pic:
             "https://images.unsplash.com/photo-1493238792000-8113da705763?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
@@ -65,6 +108,10 @@ class TestData {
         title: "ferrari",
         rating: 2,
         price: 340,
+        seats: 4,
+        features: ["feature 1", "feature 2", "feature 3"],
+        petrolType: "gasoline",
+        transmissionType: "bus",
         pic:
             "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
         brand: "ne sdf s w",
@@ -191,5 +238,17 @@ class TestData {
       image:
           "https://i.pinimg.com/564x/51/f6/fb/51f6fb256629fc755b8870c801092942.jpg",
     ),
+  ];
+
+  static List<DriverAccidentsModel> driverAccidents = [
+    DriverAccidentsModel(
+        car: myCars[2], amount: 200, status: "still in review"),
+    DriverAccidentsModel(
+        car: myCars[0], amount: 5250, status: "still in review"),
+    DriverAccidentsModel(car: myCars[1], amount: 52, status: "still in review"),
+    DriverAccidentsModel(
+        car: myCars[3], amount: 258, status: "still in reviewing"),
+    DriverAccidentsModel(
+        car: myCars[4], amount: 20, status: "still in review bro"),
   ];
 }

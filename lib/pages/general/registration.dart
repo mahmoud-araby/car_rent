@@ -1,5 +1,5 @@
 import 'package:adobe_xd/page_link.dart';
-import 'package:car_rent/pages/login.dart';
+import 'file:///D:/projects/test_bench/Android/car_rent/lib/pages/general/login.dart';
 import 'package:car_rent/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/get_utils/get_utils.dart';

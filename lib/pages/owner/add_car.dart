@@ -1,11 +1,13 @@
 import 'dart:io';
 
-import 'file:///D:/projects/test_bench/Android/car_rent/lib/pages/Car_Listed_Successfully.dart';
 import 'package:car_rent/widgets/button.dart';
+import 'package:car_rent/widgets/drawer/drawer.dart';
 import 'package:car_rent/widgets/input_field.dart';
 import 'package:car_rent/widgets/select_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'Car_Listed_Successfully.dart';
 
 class AddCar extends StatefulWidget {
   static const String id = "/AddCar";
@@ -28,18 +30,185 @@ class _AddCarState extends State<AddCar> {
   String insurance;
 
   String description;
+  String price;
 
   List<File> images = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: Text("Add Car"),
         centerTitle: true,
       ),
       body: ListView(
         children: [
+          ExpansionTile(
+            title: Text("Seating Capacity"),
+            children: [
+              CheckboxListTile(
+                title: Text("3 Seats"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("4 Seats"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("5 Seats"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("6 Seats"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("7 Seats"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("8 Seats"),
+                value: true,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("9 Seats"),
+                value: true,
+                onChanged: null,
+              ),
+            ],
+          ),
+          ExpansionTile(
+            title: Text("Car Features"),
+            children: [
+              CheckboxListTile(
+                title: Text("AC"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Music Player"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Sun Roof"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("ABS"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Alloy Wheels"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("GPS"),
+                value: true,
+                onChanged: null,
+              ),
+            ],
+          ),
+          ExpansionTile(
+            title: Text("Rating"),
+            children: [
+              CheckboxListTile(
+                title: Text("Above 0⭐"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Above 1⭐"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Above 2⭐"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Above 3⭐"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Above 4⭐"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text(" 5⭐"),
+                value: true,
+                onChanged: null,
+              ),
+            ],
+          ),
+          ExpansionTile(
+            title: Text("Transmission Type"),
+            children: [
+              CheckboxListTile(
+                title: Text("Bus"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Car"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("MotorCycle"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Bicycle"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Van"),
+                value: false,
+                onChanged: null,
+              ),
+            ],
+          ),
+          ExpansionTile(
+            title: Text("Fuel Type"),
+            children: [
+              CheckboxListTile(
+                title: Text("Gas"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Petrol"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Petrol 92"),
+                value: false,
+                onChanged: null,
+              ),
+              CheckboxListTile(
+                title: Text("Other"),
+                value: false,
+                onChanged: null,
+              ),
+            ],
+          ),
           AppInput(
             saver: (text) {
               name = text;
@@ -134,6 +303,22 @@ class _AddCarState extends State<AddCar> {
               }
             },
             label: "Insurance",
+            hint: "InsuranceHint",
+          ),
+          AppInput(
+            saver: (text) {
+              price = text;
+            },
+            validator: (String text) {
+              if (text.isNotEmpty) {
+                return null;
+              } else if (text.isEmpty) {
+                return "InsuranceAddValidate";
+              } else {
+                return "InsuranceValidate";
+              }
+            },
+            label: "Price",
             hint: "InsuranceHint",
           ),
           AppInput(

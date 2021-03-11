@@ -1,13 +1,16 @@
+import 'package:car_rent/pages/user/Ads.dart';
+import 'package:car_rent/widgets/drawer/drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class RateUs extends StatelessWidget {
+class RateCar extends StatelessWidget {
+  static const String id = "/RateCar";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff424242),
+      drawer: AppDrawer(),
       body: Center(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 12, vertical: 20),
@@ -87,60 +90,70 @@ class RateUs extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 12, vertical: 8.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0),
-                      border: Border.all(
-                          width: 3.0, color: const Color(0xffffffff)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0x26000000),
-                          offset: Offset(2, 2),
-                          blurRadius: 21,
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      'Submit',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 23,
-                        color: const Color(0xffffffff),
-                        height: 1,
+                  InkWell(
+                    onTap: () {
+                      Get.offAllNamed(Showroom.id);
+                    },
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 12, vertical: 8.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        border: Border.all(
+                            width: 3.0, color: const Color(0xffffffff)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0x26000000),
+                            offset: Offset(2, 2),
+                            blurRadius: 21,
+                          ),
+                        ],
                       ),
-                      textHeightBehavior:
-                          TextHeightBehavior(applyHeightToFirstAscent: false),
-                      textAlign: TextAlign.center,
+                      child: Text(
+                        'Submit',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 23,
+                          color: const Color(0xffffffff),
+                          height: 1,
+                        ),
+                        textHeightBehavior:
+                            TextHeightBehavior(applyHeightToFirstAscent: false),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 12, vertical: 8.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0),
-                      border: Border.all(
-                          width: 3.0, color: const Color(0xffffffff)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0x26000000),
-                          offset: Offset(2, 2),
-                          blurRadius: 21,
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      'Cancel',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 23,
-                        color: const Color(0xffffffff),
-                        height: 1,
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 12, vertical: 8.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        border: Border.all(
+                            width: 3.0, color: const Color(0xffffffff)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0x26000000),
+                            offset: Offset(2, 2),
+                            blurRadius: 21,
+                          ),
+                        ],
                       ),
-                      textHeightBehavior:
-                          TextHeightBehavior(applyHeightToFirstAscent: false),
-                      textAlign: TextAlign.center,
+                      child: Text(
+                        'Cancel',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 23,
+                          color: const Color(0xffffffff),
+                          height: 1,
+                        ),
+                        textHeightBehavior:
+                            TextHeightBehavior(applyHeightToFirstAscent: false),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ],

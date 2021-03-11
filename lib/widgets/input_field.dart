@@ -6,6 +6,7 @@ class AppInput extends StatelessWidget {
   final bool obscure;
   final Widget suffix;
   final String label;
+  final String initial;
   final int lines;
   final double angle;
   final keyboardType;
@@ -19,6 +20,7 @@ class AppInput extends StatelessWidget {
         vertical: 10,
       ),
       child: TextFormField(
+        initialValue: initial,
         keyboardType: keyboardType,
         obscureText: obscure,
         onSaved: saver,
@@ -54,6 +56,7 @@ class AppInput extends StatelessWidget {
   AppInput(
       {this.validator,
       this.saver,
+      this.initial,
       this.keyboardType,
       this.angle = 90,
       this.lines,

@@ -1,8 +1,10 @@
-import 'package:car_rent/pages/myCars.dart';
 import 'package:car_rent/widgets/button.dart';
+import 'package:car_rent/widgets/drawer/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+
+import 'myCars.dart';
 
 class CarListedSuccessfully extends StatelessWidget {
   static const String id = "/CarListedSuccessfully";
@@ -10,6 +12,7 @@ class CarListedSuccessfully extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

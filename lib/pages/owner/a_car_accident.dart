@@ -1,5 +1,7 @@
+import 'package:car_rent/model/accidents.dart';
 import 'package:car_rent/model/trips.dart';
 import 'package:car_rent/test_data.dart';
+import 'package:car_rent/widgets/drawer/drawer.dart';
 import 'package:car_rent/widgets/rating.dart';
 import 'package:flutter/material.dart';
 import 'package:car_rent/model/car.dart';
@@ -7,38 +9,44 @@ import 'package:car_rent/widgets/custom_image.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 
-class ACarTrips extends StatelessWidget {
+class MyCarAccident extends StatelessWidget {
+  static const String id = "/MyCarAccident";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: AppDrawer(),
         appBar: AppBar(
-          title: Text("My Cars Trips"),
+          title: Text("My Cars Accidents"),
           centerTitle: true,
         ),
         body: ListView(
           shrinkWrap: true,
           children: [
-            Title(TestData.myCars.first),
+            Title(TestData.myCars[2]),
             ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                itemCount: TestData.tips.length,
+                itemCount: TestData.accidents.length,
                 itemBuilder: (context, index) =>
-                    tripTile(TestData.tips[index])),
+                    accidentTile(TestData.accidents[index])),
           ],
         ));
   }
 
-  tripTile(TripsModel trip) => Padding(
+  accidentTile(AccidentsModel accident) => Padding(
         padding: const EdgeInsets.all(12.0),
         child: Container(
           color: Colors.black54,
           child: ListTile(
-            title: Text(trip.username),
-            subtitle: Rating(trip.rating),
+            title: Text(accident.userName +
+                "     " +
+                accident.amount.toString() +
+                "\$"),
+            subtitle: Text("status: " + accident.status.toString()),
             trailing: Container(
               width: 80,
-              child: cachedNetworkImage(trip.image),
+              child: cachedNetworkImage(accident.image),
             ),
           ),
         ),
